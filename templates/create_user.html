@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New User</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+
+<body>
+  <h1>Create New User</h2>
+
+    <form action="/users/new" method="POST">
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name" placeholder="Enter first name" required>
+
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" placeholder="Enter last name" required>
+
+      <label for="image_url">Image URL</label>
+      <input type="text" name="image_url" placeholder="Enter URL for profile picture">
+      <button>Create</button>
+    </form>
+
+    <div class="return_link">
+      <a href="/users">Go To Main</a>
+    </div>
+
+</body>
+
+</html>
