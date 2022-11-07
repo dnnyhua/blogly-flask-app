@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/app.css">
+  <title>{{post.title}}</title>
+</head>
+<body>
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+  <i>by {{post.user.get_full_name()}}</i>
+
+  <form>
+    <button formaction="/users/{{post.user_id}}" formmethod="GET">Cancel</button>
+    <button formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
+    <button formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>
+  </form>
+</body>
+</html>

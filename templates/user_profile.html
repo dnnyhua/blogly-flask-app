@@ -22,12 +22,36 @@
     <form>
       <button formaction="/users/{{user.id}}/edit" formmethod="GET">Edit</button>
       <button formaction="{{user.id}}/delete" formmethod="POST">Delete</button>
+      
+      <button formaction="/users/{{user.id}}/posts/new" formmethod="GET">Add Post</button>
     </form>
+
+    <h2>Posts</h2>
+    <!-- list of posts by user should go here -->
+    <ul class="user_posts">
+      {% for post in user.posts %}
+      <li>
+        <a href="/posts/{{post.id}}">{{post.title}}</a>
+        <small>{{post.created_at}}</small>
+      </li>
+      {% endfor %}
+    </ul>
+    
+
+
+    <!-- Should add post button go down here instead? -->
+    <!-- <form >
+      <button formaction="/users/{{user.id}}/posts/new" formmethod="GET">Add Post</button>
+    </form> -->
+    
   </div>
+
+
 
   <div class="return_link">
     <a href="/users">Go To Main</a>
   </div>
+
 
 </body>
 

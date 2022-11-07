@@ -11,11 +11,11 @@
 
 <body>
   <h1>Edit User</h2>
-    <form method="POST">
+    <form action="/users/{{user.id}}/edit" method="POST">
       <input type="text" name="first_name" required value="{{user.first_name}}">
       <input type="text" name="last_name" required value="{{user.last_name}}">
       <input type="text" name="image_url" value="{{user.image_url}}">
-      <button>Cancel</button>
+      <button formmethod="GET" formaction="/users/{{user.id}}">Cancel</button>
       <button>Save</button>
     </form>
 
