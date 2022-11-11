@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{tag.name}}
+{% endblock %}
+
+
+{% block content %}
+  
+  <h1>{{tag.name}}</h1>
+  <ul>
+    <!-- "through" relationship allows us to connect tags to posts and posts to tags -->
+    {%for post in tag.posts%}
+    <li>
+      <a href="/posts/{{post.id}}">{{post.title}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <form action="">
+    <button formaction="/tags/{{tag.id}}/edit">Edit</button>
+    <button formaction="/tags/{{tag.id}}/delete" formmethod="POST">Delete</button>
+  </form>
+
+{% endblock %}

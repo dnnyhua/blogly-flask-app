@@ -1,10 +1,11 @@
 img {
   max-width: 100px;
+  height: auto;
   float: left;
   padding-right: 20px;
 }
 
-input[type=text] {
+/* input[type=text] {
   width: 50%;
   display: block;
   box-sizing: border-box;
@@ -29,4 +30,4 @@ h2 {
 
 .user_posts {
   margin-top: 0px;
-}
+} */

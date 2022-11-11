@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/app.css">
-  <title>{{user.id}}</title>
-</head>
+{% block title %}
+{{user.get_full_name}}
+{% endblock %}
 
-<body>
 
-  <div>
-    <img src="{{user.image_url}}" alt="">
+{% block content %}
+
+
+
+  <div >
+    <img class="col-md-1" src="{{user.image_url}}" alt="">
   </div>
-
 
   <div class="user_details">
     <h1>{{user.get_full_name()}}</h1>
@@ -37,22 +34,7 @@
       {% endfor %}
     </ul>
     
-
-
-    <!-- Should add post button go down here instead? -->
-    <!-- <form >
-      <button formaction="/users/{{user.id}}/posts/new" formmethod="GET">Add Post</button>
-    </form> -->
-    
   </div>
 
 
-
-  <div class="return_link">
-    <a href="/users">Go To Main</a>
-  </div>
-
-
-</body>
-
-</html>
+{% endblock %}
